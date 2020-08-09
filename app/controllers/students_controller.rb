@@ -1,4 +1,6 @@
 class StudentsController < ApplicationController
+  before_action :get_student, only: [:edit, :update, :show]
+
   def index
     @students = Student.all
   end
@@ -19,15 +21,14 @@ class StudentsController < ApplicationController
   end
 
   def edit
-    @student = Student.find(params[:id])
+
   end
 
   def show
-    @student = Student.find(params[:id])
+
   end
 
   def update
-    @student = Student.find(params[:id])
     if @student.update(white_list_params)
       flash[:notice] = 'Successfully updated profile'
       redirect_to student_path(@student)
@@ -38,6 +39,10 @@ class StudentsController < ApplicationController
   end
 
   private
+
+  def get_student
+    @student = Student.find(params[:id])
+  end
 
   def white_list_params
     params.require(:student).permit(:name, :email)
