@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row center sign-up-form">
+    <div class="col s12 m12 l12">
+      <div class="card-panel">
+        <h3 class="header">Log In</h3>
+        <div class="row">
+          <%= form_for (:sessions), html: { class: 'col s12 '} do |f| %>
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.email_field :email, autocomplete: 'email', placeholder: 'email@example.com', autofocus: true %>
+                <%= f.label :email %>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.password_field :password, placeholder: 'password' %>
+                <%= f.label :password %>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.button 'Log In<i class="material-icons right">arrow_forward</i>'.html_safe, class: 'btn orange waves-effect waves-light center' %>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
