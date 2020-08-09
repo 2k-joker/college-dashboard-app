@@ -11,11 +11,10 @@
         <div class="card-content white-text">
           <span class="card-title"><strong>Name: </strong><%= student.name %></span>
           <span class="card-title"><small><strong>Email: </strong><%= student.email %></span></small>
-          <p><%= student.created_at %></p>
+          <p><%= 'Registered ' + time_ago_in_words(student.created_at) %></p>
         </div>
         <div class="card-action">
-          <a href="#">PROFILE</a>
-          <a href="#">INFO</a>
+          <%= link_to 'PROFILE', student_path(student) %>
         </div>
       </div>
     </div>

@@ -7,6 +7,9 @@
         <p><%= 'Registered ' + time_ago_in_words(@student.created_at) %></p>
       </div>
     </div>
-    <%= link_to 'Edit Profile<i class="material-icons right">create</i>'.html_safe, edit_student_path(@student), class: 'waves-effect waves-light btn' %>
+    <% if current_user == @student %>
+      <%= link_to 'Edit Profile<i class="material-icons right">create</i>'.html_safe,
+        edit_student_path(@student), class: 'waves-effect waves-light btn' %>
+    <% end %>
   </div>
 </div>
