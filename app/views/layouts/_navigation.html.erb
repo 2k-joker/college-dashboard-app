@@ -21,6 +21,9 @@
         <%= link_to 'Weaver Tech', root_path, class: 'brand-logo right' %>
         <a href="#" data-target="mobile-demo" class="sidenav-trigger"><i class="material-icons">menu</i></a>
         <ul id="nav-mobile" class="left hide-on-med-and-down">
+          <% if !user_signed_in?  %>
+            <li><%= link_to 'Sign Up', new_student_path %></li>
+          <% end %>
           <li><%= link_to 'Courses', root_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'Students', students_path %></li>
@@ -28,6 +31,9 @@
           <li><a class="dropdown-trigger" href="#!" data-target="dropdown1">Account<i class="material-icons right">arrow_drop_down</i></a></li>
         </ul>
         <ul class="sidenav" id="mobile-demo">
+          <% if !user_signed_in?  %>
+            <li><%= link_to 'Sign Up', new_student_path %></li>
+          <% end %>
           <li><%= link_to 'Courses', root_path %></li>
           <% if user_signed_in? %>
             <li><%= link_to 'Students', students_path %></li>
