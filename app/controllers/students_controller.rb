@@ -18,8 +18,23 @@ class StudentsController < ApplicationController
     end
   end
 
+  def edit
+    @student = Student.find(params[:id])
+  end
+
   def show
     @student = Student.find(params[:id])
+  end
+
+  def update
+    @student = Student.find(params[:id])
+    if @student.update(white_list_params)
+      flash[:notice] = 'Successfully updated profile'
+      redirect_to student_path(@student)
+    else
+      flash[:alert] = 'Whoops! Something went wrong. Please try again'
+      render 'edit'
+    end
   end
 
   private
