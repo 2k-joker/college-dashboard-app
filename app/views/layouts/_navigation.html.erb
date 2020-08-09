@@ -29,4 +29,16 @@
       </div>
     </div>
   </nav>
+  <% flash.each do |key, message| %>
+    <div class="container">
+      <div class="row sign-up-form">
+        <div class="col s12 m12 l12">
+          <div class="card-panel red lighten-2" id="fade-out-target">
+            <%= message %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <% end %>
 </header>
