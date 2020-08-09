@@ -1,4 +1,8 @@
-# README
+## NOTES
+
+* Work in progress but it's live: https://weaver-college-dashboard.herokuapp.com/
+
+## SPECS
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
