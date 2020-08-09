@@ -10,19 +10,34 @@
             <div class="row">
               <div class="input-field col s12">
                 <%= f.text_field :name, placeholder: 'Kerry Washington', autofocus: true %>
-                <%= f.label :name %> 
+                <%= f.label :name, class: 'active' %> 
               </div>
             </div>
 
             <div class="row">
               <div class="input-field col s12">
                 <%= f.email_field :email, autocomplete: 'email', placeholder: 'email@example.com' %>
-                <%= f.label :email %>
+                <%= f.label :email, class: 'active' %>
               </div>
             </div>
+
             <div class="row">
               <div class="input-field col s12">
-                <%= f.button(@student.new_record? ? 'Sign Up' : 'Update', class: 'btn orange waves-effect waves-light center') %>
+                <%= f.password_field :password, placeholder: 'password' %>
+                <%= f.label :password, class: 'active' %>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.password_field :password_confirmation, placeholder: 'confirm password' %>
+                <%= f.label :confirm_password, class: 'active' %>
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="input-field col s12">
+                <%= f.button(@student.new_record? ? 'Sign Up<i class="material-icons right">arrow_forward</i>'.html_safe : 'Update', class: 'btn orange waves-effect waves-light center') %>
               </div>
             </div>
           <% end %>

@@ -13,7 +13,7 @@ class StudentsController < ApplicationController
     @student = Student.new(white_list_params)
     if @student.save
       flash[:notice] = 'Successfully signed up'
-      redirect_to root_path
+      redirect_to @student
     else
       flash[:alert] = 'Whoops! Something went wrong. Please try again'
       render 'new'
@@ -45,6 +45,6 @@ class StudentsController < ApplicationController
   end
 
   def white_list_params
-    params.require(:student).permit(:name, :email)
+    params.require(:student).permit(:name, :email, :password, :password_confrimation)
   end
 end
